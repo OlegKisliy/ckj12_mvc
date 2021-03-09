@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Notes list</title>
+<link rel="stylesheet" href="/styles/notes.css">
+<link rel="stylesheet" href="/styles/navbar.css">
+
+</head>
+<body>
+	<div th:insert="home :: navbar"></div>
+	<div class="cnt">
+		<div class="search">
+			<form action="/notes/search">
+				<input name="word" type="text" placeholder="Search..."
+					autofocus="autofocus">
+				<button type="submit">
+					<img src="/img/search.png">
+				</button>
+			</form>
+		</div>
+		<h1>Notes list</h1>
+		<a href="/notes/create">Create new note</a>
+		<div class="note" th:each="note : ${notes}">
+			<a title="Delete" th:href="@{/notes/delete/{id}(id=${note.id})}"
+				class="option" onclick="return confirm('Are you sure?')"> <img
+				src="/img/delete.png">
+			</a>
+			<div class="note_label">
+				<span th:text="${note.label}"></span>
+			</div>
+			<div th:text="${note.message}"></div>
+		</div>
+	</div>
+</body>
+</html>

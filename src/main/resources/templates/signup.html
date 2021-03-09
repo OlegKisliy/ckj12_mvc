@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="/styles/sign_form.css">
+</head>
+<body>
+<form id="signup_form" name="user" th:action="@{/signup}" method="post">
+   <div class="container">
+        <h2>Please sign up</h2>
+        <div>Username
+            <input type="text" name="username"
+                   placeholder="Letters, digits, _"
+                   pattern="[a-zA-Z0-9_]+"
+                   required="required">
+        </div>
+        <div>Password
+            <input type="password" name="password"
+                   pattern="[a-zA-Z0-9]{8,}"
+                   placeholder="At least 8 letters or digits"
+                   required="required">
+        </div>
+        <div>Confirm password
+            <input type="password"
+                   pattern="[a-zA-Z0-9]{8,}"
+                   placeholder="At least 8 letters or digits"
+                   required="required">
+        </div>
+        <div>Name
+            <input type="text" name="name"
+                   pattern="^[a-zA-Zа-яёА-ЯЁ]+$"
+                   placeholder="Letters"
+                   required="required">
+        </div>
+        <div class="line">
+            <div>
+                <label> Age <input type="number" name="age" min="1" max="150"
+                                   required="required">
+                </label>
+            </div>
+            <div>
+                Male <input id="m" type="radio" name="gender" value="male" required>
+                Female <input id="f" type="radio" name="gender" value="female" required>
+            </div>
+        </div>
+        <button type="submit" value="Sign up">Sign Up</button>
+        <a href="/login">Do you have an account? Sign in</a>
+    </div>
+    <script>
+        function check() {
+            let password = document.getElementById('password').value
+            let confirm_passsword = document.getElementById('confirm_password').value
+            let msg = document.getElementById('error')
+            msg.innerText = ''
+
+            if (password != confirm_passsword) {
+                msg.innerHTML = 'Confirm password does not match!'
+                return false
+            } else {
+                msg.innerText = ''
+                return true
+            }
+        }
+    </script>
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Info file</title>
+</head>
+<body>
+	<h1>Create user</h1>
+	<form action="/users/add" th:name="user" method="post">
+		<p>
+			Name <input type="text" th:name="name">
+		</p>
+		<p>
+			Age<input type="number" th:name="age">
+		</p>
+		<p>
+			Male <input type="radio" th:name="gender" th:value="male">
+			Female <input type="radio" th:name="gender" th:value="female">
+		</p>
+		<p>
+			<input type="submit" value="Create">
+		</p>
+	</form>
+</body>
+</html>
