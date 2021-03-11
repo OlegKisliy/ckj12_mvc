@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create note</title>
+<link rel="stylesheet" href="/styles/form.css">
+</head>
+<body>
+	<div id="my_form">
+		<h1>Create note</h1>
+		<form th:name="note" action="/notes/add" method="post">
+			<p>
+				<input type="text" th:name="label" placeholder="Enter label">
+			<p>
+				<textarea rows="5" th:name="message" placeholder="Enter message"></textarea>
+			<p>
+				<input type="submit" value="Create">
+		</form>
+	</div>
+</body>
+</html>

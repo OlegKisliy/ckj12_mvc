@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.cnt {
+	background: rgb(232, 243, 255);
+	margin: 10px;
+	padding: 10px;
+}
+
+.note {
+	background: rgb(255, 244, 234);
+	margin: 20px;
+	padding: 10px;
+	width: 50%;
+	border: 2px solid rgb(0, 0, 0);
+	border-left: 10px double rgb(0, 0, 0);
+	border-radius: 15px;
+}
+
+.note_label {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+a{
+	color:blue;
+	text-decoration: none;
+}
+
+a:hover{
+	color:red;
+}
+
+.option{
+	float: right;
+}
+
+a img{
+	width:25px;
+}
+
+.search{
+	float:right;
+	margin: 30px;
+}
+.search input[type=text]{
+	font-size:20px;
+}
+.search button img{
+	width:20px;
+}

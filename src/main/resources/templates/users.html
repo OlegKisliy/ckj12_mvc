@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Info file</title>
+<link rel="stylesheet" href="/styles/navbar.css">
+</head>
+<body>
+	<div th:insert="home :: navbar"></div>
+	<h1>User list</h1>
+	<a href="/users/create">Create new user</a>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Gender</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user : ${users}">
+				<td><span th:text="${user.id}"></span></td>
+				<td><span th:text="${user.name}"></span></td>
+				<td><span th:text="${user.age}"></span></td>
+				<td><span th:text="${user.gender}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

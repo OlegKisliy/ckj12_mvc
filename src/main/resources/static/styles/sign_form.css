@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 40%;
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=number] {
+    width: 50px;
+    padding: 10px 10px;
+    margin: 10px;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #429144;
+}
+
+.container {
+    padding: 16px;
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.error {
+    color: red;
+}

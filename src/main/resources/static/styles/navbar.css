@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: rgb(0, 128, 255);
+	color: white;
+	background-color: rgb(0, 128, 255);
+}
+
+.navbar a {
+	display: block;
+	font-size: 20px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar a:hover {
+	background-color: rgb(0, 104, 208);
+}
+
+.block {
+	display: flex;
+	flex-direction: row;
+	display: flex;
+}
