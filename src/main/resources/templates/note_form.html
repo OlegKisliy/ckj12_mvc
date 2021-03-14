@@ -8,12 +8,17 @@
 <body>
 	<div id="my_form">
 		<h1>Create note</h1>
+       
 		<form th:name="note" action="/notes/add" method="post">
+		   
 			<p>
-				<input type="text" th:name="label" placeholder="Enter label">
+				<input type="text" th:name="name" placeholder="Enter note name">
 			<p>
-				<textarea rows="5" th:name="message" placeholder="Enter message"></textarea>
-			<p>
+				<textarea rows="5" cols="" th:name="description" placeholder="Enter message">
+	</textarea>
+	 <p>
+				<input type="text" th:name="folder.name" placeholder="Enter folder name" >
+	<p>
 				<input type="submit" value="Create">
 		</form>
 	</div>

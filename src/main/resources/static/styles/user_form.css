@@ -1,31 +1,25 @@
 @charset "UTF-8";
 
-#my_form {
-	background: rgb(0, 128, 255);
+.my_form {
+	background:  rgb(232, 243, 255);
 	margin: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
 	padding: 10px;
-	border: 2px solid rgb(0, 0, 191);
+	border: 2px solid rgb(255, 128, 64);
 	border-radius: 15px;
 }
 
-#send_form {
-	background: rgb(0, 128, 255);
-	margin: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-	padding: 10px;
-	border: 2px solid rgb(0, 0, 191);
-	border-radius: 15px;
-	
-}
-
-input[type=text], textarea {
-	width: 80%;
+input [type=text] {
+	width: auto;
 	resize: none;
+}
+
+input[type=number]{
+	width: auto;
+	resize: none;
+	margin-left:18px;
 }
 
 input[type=submit] {

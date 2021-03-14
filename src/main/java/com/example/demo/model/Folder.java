@@ -6,50 +6,43 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name="folders")
+public class Folder {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
-	private String username;
-	private String password;
-	private String role;
-	
 	private String name;
-	private int age;
-	private String gender;
-	private String email;
 	
+	@ManyToOne
+	@ToString.Exclude
+	private User user;
 	
-
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "folder")
 	private List<Note> notes;
-	
-	@OneToMany(mappedBy = "user")
-	private List<Folder>folders;
 
+	public Folder(String name, List<Note> notes) {
+		super();
+		this.name = name;
+		this.notes = notes;
+	}
+	
 	public void addNote(Note note) {
-		note.setUser(this);
+		note.setFolder(this);
 		notes.add(note);
 	}
-	
-	public void createFolder(Folder folder) {
-		folder.setUser(this);
-		folders.add(folder);
-	}
 
-	
-	
 }

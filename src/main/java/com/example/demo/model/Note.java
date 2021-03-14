@@ -21,15 +21,28 @@ public class Note {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String label;
-	private String message;
+	private String name;
+	private String description;
 
 	@ToString.Exclude
 	@ManyToOne
 	private User user;
+	
+	@ToString.Exclude
+	@ManyToOne
+	private Folder folder;
 
-	public Note(String label, String message) {
-		this.label = label;
-		this.message = message;
+	public Note(String name, String description, User user, Folder folder) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.user = user;
+		this.folder = folder;
 	}
+
+	
+
+	
+
+	
 }

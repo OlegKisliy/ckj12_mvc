@@ -34,8 +34,7 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String home(Model model, Principal principal) {
-		if (principal != null) {
-			// юзернейм (уникальный)
+		    if (principal != null) {
 			String username = principal.getName();
 			User user = userRepository.findByUsername(username);
 			model.addAttribute("message", "Welcome, " + user.getName());

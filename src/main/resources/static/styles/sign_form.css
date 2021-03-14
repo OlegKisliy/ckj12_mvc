@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 form {
+	background-color:#8dc7c7;
+	font-family:inherit;
+	font-style:oblique;
+	text-decoration:blink;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
@@ -16,6 +20,7 @@ input[type=text], input[type=password], input[type=email] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    
 }
 
 input[type=number] {
@@ -26,7 +31,7 @@ input[type=number] {
 
 
 button {
-    background-color: #4CAF50;
+    background-color: #ff8000;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -36,7 +41,7 @@ button {
 }
 
 button:hover {
-    background-color: #429144;
+    background-color: rgb(255, 149, 43);
 }
 
 .container {

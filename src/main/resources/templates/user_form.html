@@ -3,15 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Info file</title>
+<link rel="stylesheet" href="/styles/user_form.css">
 </head>
 <body>
+<div class="my_form">
 	<h1>Create user</h1>
 	<form action="/users/add" th:name="user" method="post">
 		<p>
-			Name <input type="text" th:name="name">
+			Name <input type="text" th:name="name" placeholder="Enter name">
 		</p>
 		<p>
-			Age<input type="number" th:name="age">
+			Age<input type="number" th:name="age" placeholder="Enter age">
+		</p>
+		<p>
+		    Email <input type="email" th:name="email" placeholder="Enter email">
 		</p>
 		<p>
 			Male <input type="radio" th:name="gender" th:value="male">
@@ -21,5 +26,6 @@
 			<input type="submit" value="Create">
 		</p>
 	</form>
+	</div>
 </body>
 </html>

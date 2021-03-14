@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 <meta charset="UTF-8">
 <title>Notes list</title>
 <link rel="stylesheet" href="/styles/notes.css">
 <link rel="stylesheet" href="/styles/navbar.css">
-
 </head>
 <body>
+
 	<div th:insert="home :: navbar"></div>
+
 	<div class="cnt">
 		<div class="search">
-			<form action="/notes/search">
+			<form action="/folders/search">
 				<input name="word" type="text" placeholder="Search..."
 					autofocus="autofocus">
 				<button type="submit">
@@ -19,20 +21,19 @@
 				</button>
 			</form>
 		</div>
-		<h1>Notes list</h1>
-		<a href="/notes/create">Create new note</a>
-		<div class="note" th:each="note : ${notes}">
-			<a title="Delete" th:href="@{/notes/delete/{id}(id=${note.id})}"
-				class="option" onclick="return confirm('Are you sure?')"> <img
-				src="/img/delete.png">
-			</a>
-			<a title="Edit" th:href="@{/notes/edit/{id}(id=${note.id})}"
-			class="editNote"><img src="img/edit.png">
-			</a>
+		<h1>Folders</h1>
+		<a href="/folders/create"><button type="submit">Create new folder</button></a>
+		<div class="note" th:each="folder : ${folders}">
+			<a title="Open" th:href="@{/notes/all/{id}(id=${folder.id})}">Open</a> 
+			<a title="Delete"
+				th:href="@{/folders/delete/{id}(id=${folder.id})}" class="option"
+				onclick="return confirm('Are you sure?')"> <img
+				src="/img/delete.png"></a> 
+			
 			<div class="note_name">
-				<span th:text="${note.name}"></span>
+				<span th:text="${folder.name}"></span>
 			</div>
-			<div th:text="${note.description}"></div>
+
 		</div>
 	</div>
 </body>

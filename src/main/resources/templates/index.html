@@ -15,7 +15,7 @@
 				<a href="/">Home</a>
 			</div>
 			<div sec:authorize="isAuthenticated()">
-				<a href="/folders/all">Folders</a>
+				<a href="/notes/all">Notes</a>
 			</div>
 			<div sec:authorize="hasRole('ROLE_ADMIN')">
 				<a href="/users/all">Users</a>
@@ -27,9 +27,6 @@
 			</div>
 			<div>
 				<a href="/signup" sec:authorize="isAnonymous()">Sign Up</a>
-			</div>
-			<div>
-				<a href="/email" sec:authorize="isAuthenticated()">Send email</a>
 			</div>
 			<div>
 				<a href="/logout" sec:authorize="isAuthenticated()">Logout</a>

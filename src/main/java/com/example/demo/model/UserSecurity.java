@@ -11,7 +11,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class UserSecurity implements UserDetails {
 	private User user;
 
+	
+
 	public UserSecurity(User user) {
+		super();
 		this.user = user;
 	}
 

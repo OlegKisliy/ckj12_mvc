@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Info file</title>
+<link rel="stylesheet" href="/styles/user_form.css">
+</head>
+<body>
+	<div class="my_form">
+		<h1>Change user info</h1>
+
+
+		<form action="/users/change" th:name="user" method="post">
+
+
+			Id<input type="number" th:name="id" th:value="${user.id}" readonly>
+
+			<p>
+				Name <input type="text" th:name="name" th:value="${user.name}">
+
+			</p>
+			<p>
+				Age<input type="number" th:name="age" th:value="${user.age}">
+			</p>
+			<p>
+		        Email <input type="email" th:name="email" th:value="${user.email}">
+		   </p>
+			<p>
+				Male <input type="radio" th:name="gender" th:value="male">
+				Female <input type="radio" th:name="gender" th:value="female">
+			</p>
+			<p>
+				<input type="submit" value="Save changes">
+			</p>
+		</form>
+	</div>
+</body>
+</html>

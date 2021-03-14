@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create note</title>
+<link rel="stylesheet" href="/styles/form.css">
+</head>
+<body>
+	<div id="my_form">
+		<h1>Edit note</h1>
+
+		<form action="/notes/change" th:name="note" method="post">
+		<p>
+		<input type="number" th:name="id" th:value="${note.id}" hidden="">
+			<p>
+				<input type="text" th:name="name" th:value="${note.name}">
+			<p>
+				<textarea rows="5" cols="" th:name="description" th:text="${note.description}">
+	</textarea>
+	<p>
+				<input type="submit" value="Save changes">
+		</form>
+	</div>
+</body>
+</html>
